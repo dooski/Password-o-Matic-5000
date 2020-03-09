@@ -22,10 +22,9 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(password) {
   if (password !== null) {
-    for (var length = null; length === null || (length < 8 || length > 128) || uppercaseLetters.includes(length) || lowercaseLetters.includes(length); length = length) {
+    for (var length = null; length === null || (length < 8 || length > 128); length = length) {
       length = prompt("How long would you like your fantastic password to be? (Minimum of 8, maximum of 128)");
     }
-    for (var )
   }
 
   password = length;
