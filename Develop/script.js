@@ -25,9 +25,14 @@ function generatePassword(password) {
     for (var length = null; length === null || (length < 8 || length > 128); length = length) {
       length = prompt("How long would you like your fantastic password to be? (Minimum of 8, maximum of 128)");
     }
+    lowercase = confirm("Should your fantastic password include lowercase letters?")
+    uppercase = confirm("Should your fantastic password include uppercase letters?")
+    numeric = confirm("Should your fantastic password include numerals?")
+    special = confirm("Should your  fantastic password include special characters?")
   }
 
-  password = length;
+
+  password = length + lowercase + uppercase + numeric + special;
   return password;
 }
 
