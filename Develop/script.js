@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Variables for letters, symbols, uppercase and lowercase
 var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var symbols = "?"
+var symbols = ["?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "[", "]", "{", "}"]
 
 // Write password to the #password input
 function writePassword() {
@@ -29,8 +29,12 @@ function generatePassword(password) {
     uppercase = confirm("Should your fantastic password include uppercase letters?")
     numeric = confirm("Should your fantastic password include numerals?")
     special = confirm("Should your  fantastic password include special characters?")
-  }
+    if (lowercase === false && uppercase == false && numeric === false && special === false) {
+      alert("Error: At least one character type must be accepted for your fantastic password")
+      writePassword()
+    }
 
+  }
 
   password = length + lowercase + uppercase + numeric + special;
   return password;
