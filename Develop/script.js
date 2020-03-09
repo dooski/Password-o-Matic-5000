@@ -51,7 +51,8 @@ function generatePassword(password) {
       newLength = options.push("special")
     }
 
-    // length of password; loop runs for the amount of characters chosen
+    // length of password; loop runs for the amount of characters chosen; c is chosen unique character
+    var c = []
 
     for (var i = 0; i < length; i++) {
       // determines type for individual character; x is random number used to determine type
@@ -78,10 +79,12 @@ function generatePassword(password) {
         var z = specialCharacters[y];
       }
       console.log(z)
+      newLength = c.push(z)
     }
   }
 
-  password = z
+  var pw = c.toString()
+  password = pw.replace(/,/g, "")
   return password;
 }
 
